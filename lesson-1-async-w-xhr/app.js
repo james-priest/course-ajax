@@ -49,7 +49,7 @@
             const data = JSON.parse(this.responseText);
 
             // my way (es5)
-            // if (data && data.response.docs && data.response.docs[0]) {
+            // if (data.response && data.response.docs && data.response.docs[0]) {
             //     htmlContent += '<ul>';
             //     for (let i = 0; i < data.response.docs.length; i++) {
             //         const article = data.response.docs[i];
@@ -64,7 +64,7 @@
             // }
 
             // their way (es6)
-            if (data && data.response.docs && data.response.docs[0]) {
+            if (data.response && data.response.docs && data.response.docs[0]) {
                 htmlContent = '<ul>' + data.response.docs.map(article => `<li class="article">
                         <h2><a href="${article.web_url}">${article.headline.main}</a></h2>
                         <p>${article.snippet}</p>
