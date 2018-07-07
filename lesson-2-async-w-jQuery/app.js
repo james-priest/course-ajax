@@ -63,9 +63,9 @@
             responseContainer.insertAdjacentHTML('beforeend', htmlContent);
         }
 
-        function requestError(e, part) {
+        function requestError(err, part) {
             console.log('An error occurred.😞');
-            console.log('error:', e);
+            console.log('error:', err);
             responseContainer.insertAdjacentHTML('beforeend',
                 `<p class="network-warning error-no-${part}">Missing ${part}</p>`);
         }
